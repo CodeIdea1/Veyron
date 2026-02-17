@@ -10,9 +10,9 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const heroSection = document.querySelector('section');
-      const performanceTrigger = document.querySelector('.performance-trigger');
-      const exploreTrigger = document.querySelector('.explore-trigger');
+      const heroSection = document.querySelector('section') as HTMLElement | null;
+      const performanceTrigger = document.querySelector('.performance-trigger') as HTMLElement | null;
+      const exploreTrigger = document.querySelector('.explore-trigger') as HTMLElement | null;
       
       if (heroSection) {
         const heroHeight = heroSection.offsetHeight;
