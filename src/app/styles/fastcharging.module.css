@@ -49,5 +49,7 @@
 @media (max-width: 768px) {
   .title {
     font-size: 2rem;
+      margin: 0px;
+
   }
 }

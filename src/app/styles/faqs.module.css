@@ -79,6 +79,9 @@
 }
 
 @media (max-width: 1024px) {
+  .section {
+  padding: 0px 5%;
+}
   .container {
     flex-direction: column;
     gap: 40px;

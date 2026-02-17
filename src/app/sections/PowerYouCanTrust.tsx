@@ -46,25 +46,28 @@ export default function PowerYouCanTrust() {
 
   useEffect(() => {
     const sections = content.length;
+    const isMobile = window.innerWidth <= 968;
     
-    ScrollTrigger.create({
-      trigger: sectionRef.current,
-      start: 'top top',
-      end: `+=${sections * 100}%`,
-      pin: true,
-      scrub: 1,
-      onUpdate: (self) => {
-        const newIndex = Math.min(Math.floor(self.progress * sections), sections - 1);
-        if (newIndex !== prevIndexRef.current) {
-          setIsChanging(true);
-          setTimeout(() => {
-            setCurrentIndex(newIndex);
-            prevIndexRef.current = newIndex;
-            setIsChanging(false);
-          }, 300);
-        }
-      },
-    });
+    if (!isMobile) {
+      ScrollTrigger.create({
+        trigger: sectionRef.current,
+        start: 'top top',
+        end: `+=${sections * 100}%`,
+        pin: true,
+        scrub: 1,
+        onUpdate: (self) => {
+          const newIndex = Math.min(Math.floor(self.progress * sections), sections - 1);
+          if (newIndex !== prevIndexRef.current) {
+            setIsChanging(true);
+            setTimeout(() => {
+              setCurrentIndex(newIndex);
+              prevIndexRef.current = newIndex;
+              setIsChanging(false);
+            }, 300);
+          }
+        },
+      });
+    }
 
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());

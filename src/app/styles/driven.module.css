@@ -99,6 +99,11 @@
 .teamCard {
   position: relative;
   cursor: pointer;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .imageWrapper {
@@ -181,6 +186,11 @@
 }
 
 @media (max-width: 768px) {
+
+  .section {
+  padding: 0px 5%;
+
+}
   .content {
     flex-direction: column;
   }

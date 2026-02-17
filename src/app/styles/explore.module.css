@@ -130,6 +130,9 @@
 }
 
 @media (max-width: 968px) {
+  .content {
+  padding: 20px 0px;
+  }
   .grid {
     grid-template-columns: 1fr;
   }

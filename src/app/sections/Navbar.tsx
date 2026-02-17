@@ -5,6 +5,7 @@ import styles from '../styles/navbar.module.css';
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [darkTheme, setDarkTheme] = useState(false);
 
   useEffect(() => {
@@ -33,7 +34,7 @@ export default function Navbar() {
   return (
     <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
       <div className={styles.navContainer}>
-        <div className={`${styles.logo} ${scrolled ? styles.logoFixed : ''} ${darkTheme ? styles.logoDark : ''}`}>
+        <div className={`${styles.logo} ${scrolled ? styles.logoFixed : ''} ${darkTheme ? styles.logoDark : ''} ${mobileMenuOpen ? styles.logoShifted : ''}`}>
           <img src="/logoo.svg" alt="Logo" />
         </div>
 
@@ -60,7 +61,7 @@ export default function Navbar() {
         )}
 
         {scrolled && (
-          <div className={styles.compactNav}>
+          <div className={`${styles.compactNav} ${mobileMenuOpen ? styles.compactNavExpanded : ''}`} onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
             <button className={styles.menuIcon}>
               <span></span>
               <span></span>
@@ -68,12 +69,12 @@ export default function Navbar() {
             </button>
             <button className={styles.quoteBtn}>Get a Quote</button>
             <ul className={styles.expandedLinks}>
-              <li><a href="#home">Home</a></li>
-              <li><a href="#performance">Performance</a></li>
-              <li><a href="#products">Products</a></li>
-              <li><a href="#charging">Charging</a></li>
-              <li><a href="#testimonials">Testimonials</a></li>
-              <li><a href="#faq">FAQ</a></li>
+              <li><a href="#home" onClick={(e) => { e.stopPropagation(); setMobileMenuOpen(false); }}>Home</a></li>
+              <li><a href="#performance" onClick={(e) => { e.stopPropagation(); setMobileMenuOpen(false); }}>Performance</a></li>
+              <li><a href="#products" onClick={(e) => { e.stopPropagation(); setMobileMenuOpen(false); }}>Products</a></li>
+              <li><a href="#charging" onClick={(e) => { e.stopPropagation(); setMobileMenuOpen(false); }}>Charging</a></li>
+              <li><a href="#testimonials" onClick={(e) => { e.stopPropagation(); setMobileMenuOpen(false); }}>Testimonials</a></li>
+              <li><a href="#faq" onClick={(e) => { e.stopPropagation(); setMobileMenuOpen(false); }}>FAQ</a></li>
             </ul>
           </div>
         )}

@@ -1,6 +1,5 @@
 .section {
   height: 100vh;
-  padding: 80px 5%;
   background: transparent;
   margin: auto;
   max-width: 1400px;
@@ -170,17 +169,58 @@
 }
 
 @media (max-width: 968px) {
+  .section {
+    height: auto !important;
+    padding: 40px 5%;
+    min-height: auto !important;
+  }
+
   .container {
     flex-direction: column;
-    height: auto;
+    height: auto !important;
+    gap: 15px;
+  }
+
+  .contentBox {
+    width: 100%;
+  }
+
+  .contentWrapper {
+    height: 300px !important;
+    min-height: 300px !important;
+    max-height: 300px !important;
+    padding: 25px 15px;
+    overflow-y: auto;
+  }
+
+  .decorTop,
+  .decorBottom {
+    display: none;
   }
   
   .imageBox {
-    width: 100%;
-    height: 400px;
+    width: 100% !important;
+    height: 300px !important;
+    position: relative !important;
+    flex: none !important;
+    display: block !important;
+  }
+
+  .imageBox img {
+    position: relative !important;
   }
   
   .title {
-    font-size: 2rem;
+    font-size: 1.4rem;
+  }
+
+  .description {
+    font-size: 0.85rem;
+    max-width: 100%;
+  }
+
+  .iconWapper {
+    width: 50px;
+    height: 50px;
   }
 }

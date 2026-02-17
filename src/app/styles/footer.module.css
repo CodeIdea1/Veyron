@@ -80,13 +80,14 @@
 .footerLinks {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .legal {
   display: flex;
-  gap: 20px;
-  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
 }
 
 .legal span,
@@ -102,7 +103,9 @@
 
 .social {
   display: flex;
-  gap: 20px;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
 }
 
 .social a {
@@ -118,8 +121,8 @@
 
 @media (max-width: 1024px) {
   .topSection {
-    flex-direction: column;
     gap: 40px;
+    flex-direction: column;
   }
   
   .leftColumn,
@@ -132,7 +135,6 @@
   }
   
   .footerLinks {
-    flex-direction: column;
     gap: 20px;
     align-items: flex-start;
   }

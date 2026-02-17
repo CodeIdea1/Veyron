@@ -271,6 +271,9 @@
 }
 
 @media (max-width: 768px) {
+  .heroWrapper {
+    border-radius: 15px;
+  }
   .heroTitle {
     font-size: 2rem;
   }
