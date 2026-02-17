@@ -7,13 +7,13 @@ import styles from '../styles/electric.module.css';
 gsap.registerPlugin(ScrollTrigger);
 
 export default function ElectricFuture() {
-  const sectionRef = useRef(null);
-  const img1Ref = useRef(null);
-  const img2Ref = useRef(null);
-  const img3Ref = useRef(null);
-  const box1Ref = useRef(null);
-  const box2Ref = useRef(null);
-  const box3Ref = useRef(null);
+  const sectionRef = useRef<HTMLElement>(null);
+  const img1Ref = useRef<HTMLImageElement>(null);
+  const img2Ref = useRef<HTMLImageElement>(null);
+  const img3Ref = useRef<HTMLImageElement>(null);
+  const box1Ref = useRef<HTMLDivElement>(null);
+  const box2Ref = useRef<HTMLDivElement>(null);
+  const box3Ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const isMobile = window.innerWidth <= 768;
