@@ -1,0 +1,186 @@
+.section {
+  height: 100vh;
+  padding: 80px 5%;
+  background: transparent;
+  margin: auto;
+  max-width: 1400px;
+
+}
+
+.container {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+  margin: 0 auto;
+  height: 80vh;
+}
+
+.contentBox {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+}
+
+.contentWrapper {
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  height: 660px;
+  overflow: hidden;
+  border-radius: 10px;
+  background-color: #111111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.contentWrapper.changing {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.decorTop {
+  position: absolute;
+  top: 100px;
+}
+.decorBottom {
+  position: absolute;
+  bottom: 100px;
+}
+.iconWapper {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.141);
+}
+.icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  border-radius: 50%;
+  border: 2px solid white;
+  padding: 5px;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 13px;
+}
+
+.description {
+  font-size: 1rem;
+  color: #9ca3af;
+  line-height: 1.4;
+  margin: 0;
+  max-width: 450px;
+  text-align: center;
+}
+
+.buttons {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.button {
+  padding: 10px 18px;
+  border-radius: 50px;
+  font-size: .9rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  border: none;
+  margin-top: 20px;
+}
+
+.button:first-child {
+  background: #181818;
+  color: white;
+}
+
+.button:last-child {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.colors {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.colorDot {
+  width: 14px;
+  height:14px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s;
+  position: relative;
+  margin: 8px;
+}
+.colorDot.active::after {
+  content: '';
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  transition: all 0.3s; 
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.colorDot:hover {
+  border-color: white;
+  transform: scale(1.1);
+}
+
+.imageBox {
+  flex: 1;
+  height: 660px;
+  overflow: hidden;
+  border-radius: 10px;
+  position: relative;
+}
+
+.imageBox img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.imageBox img.imageChanging {
+  transform: scale(1.1);
+}
+
+@media (max-width: 968px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+  }
+  
+  .imageBox {
+    width: 100%;
+    height: 400px;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+}

@@ -1,0 +1,144 @@
+.section {
+  padding: 80px 5%;
+  max-width: 1400px;
+  margin: auto;
+}
+
+.title {
+  font-size: 1.9rem;
+  font-weight: 600;
+  color: #111111;
+  margin: 0 0 50px;
+  text-align: left;
+  max-width: 800px;
+  letter-spacing: -1px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+}
+
+.box {
+  position: relative;
+  height: auto;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.imageWrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.tall {
+  grid-row: span 2;
+}
+
+.tall .image {
+  height: 520px;
+}
+
+.image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+}
+
+.content {
+  padding: 30px;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.price {
+  font-size: 0.9rem;
+  color: #717171;
+  font-weight: 300;
+  margin: 0;
+}
+
+.name {
+  font-size: 1.2rem;
+  color: #000;
+  font-weight: 600;
+  margin: 0;
+}
+
+.description {
+  font-size: 1rem;
+  color: #3c3c3c;
+  font-weight: 300;
+  margin: 0;
+}
+
+.features {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  color: #313131;
+  text-transform: uppercase;
+}
+
+.feature svg {
+  color: #6b7280;
+}
+
+.button {
+  position: absolute;
+  bottom: 14px;
+  left: 20px;
+  transform: translateY(155%);
+  padding: 9px 14px;
+  background: rgb(249, 249, 249);
+  color: black;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1),
+  opacity 0.4s ease,
+  background 0.3s ease;
+}
+
+.imageWrapper:hover .button {
+  transform: translateY(0);
+}
+
+.button:hover {
+  background: rgb(255, 255, 255);
+}
+
+@media (max-width: 968px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .tall {
+    grid-row: span 1;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+}

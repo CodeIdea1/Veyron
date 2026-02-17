@@ -1,0 +1,308 @@
+.heroWrapper {
+  overflow: hidden;
+  border-radius: 30px;
+  margin: 20px .5% 20px .5%;
+}
+
+.heroSection {
+  position: relative;
+  width: 100%;
+  height: 95vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 2.5%;
+  margin: 0;
+}
+
+.heroBackground {
+  position: absolute;
+  top: -110px;
+  left: 0;
+  width: 105%;
+  height: 105%;
+  object-fit: cover;
+  z-index: 0;
+  border-radius: 20px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.526);
+  z-index: 0;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.heroTitle {
+  font-family: var(--font-space-grotesk);
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: white;
+  line-height: 1;
+  margin: 0;
+  text-align: left;
+  letter-spacing: -0.025em;
+}
+
+.heroButton {
+  position: relative;
+  padding: 23px 10px;
+  width: 230px;
+  font-size: 1.1rem;
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.064);
+  border-radius: 50px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+
+
+.buttonText {
+  display: inline-block;
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  margin-right: 80px;
+  font-weight: 600;
+}
+
+.heroButton:hover .buttonText {
+  transform: translateX(80px);
+}
+
+.arrowContainer {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 45px;
+  height: 45px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.arrowContainer svg {
+  color: #000000;
+  transition: transform 0.3s ease;
+}
+
+.heroButton:hover .arrowContainer svg {
+  transform: scale(1.1);
+}
+
+.arrowLeft {
+  left: 10px;
+  opacity: 0;
+  transform: translateY(-50%) translateX(-60px) scale(0.8);
+}
+
+.arrowRight {
+  right: 10px;
+  opacity: 1;
+  transform: translateY(-50%) translateX(0) scale(1);
+}
+
+.heroButton:hover .arrowLeft {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0) scale(1);
+}
+
+.heroButton:hover .arrowRight {
+  opacity: 0;
+  transform: translateY(-50%) translateX(60px) scale(0.8);
+}
+
+.videoThumbnail {
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+  width: 380px;
+  height: 220px;
+  background-image: url('/thumnail.webp');
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.155);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+
+.playIcon {
+  width: 48px;
+  height: 48px;
+  background: rgba(0, 0, 0, 0.341);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s;
+}
+
+.videoPopup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.844);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+}
+
+.fadeIn {
+  animation: fadeIn 0.4s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeOut {
+  animation: fadeOut 0.5s ease forwards;
+}
+
+.videoContainer {
+  position: relative;
+  width: 100%;
+  height: 90%;
+  border-radius: 8px;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(30px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slideUp {
+  animation: slideUp 0.5s ease 0.1s forwards;
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slideDown {
+  animation: slideDown 0.6s ease forwards;
+}
+
+.videoPlayer {
+  width: 90%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 18px;
+}
+
+.closeButton {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.closeButton:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: rotate(90deg);
+}
+
+.fadeOut {
+  animation: fadeOut 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards !important;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
+}
+
+.slideDown {
+  animation: slideDown 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards !important;
+}
+
+@keyframes slideDown {
+  to {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+}
+
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 2rem;
+  }
+  
+  .heroButton {
+    padding: 15px 8px;
+    width: 160px;
+    font-size: 0.9rem;
+  }
+  
+  .buttonText {
+    margin-right: 60px;
+  }
+  
+  .heroButton:hover .buttonText {
+    transform: translateX(60px);
+  }
+  
+  .arrowContainer {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .videoThumbnail {
+    width: 150px;
+    height: 90px;
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  .playIcon {
+    width: 40px;
+    height: 40px;
+  }
+}
