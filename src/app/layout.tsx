@@ -23,6 +23,9 @@ const spaceGrotesk = Space_Grotesk({
   weight: ["400", "600", "700"],
 });
 
+export const metadata: Metadata = {
+  title: "ChargeX",
+};
 export default function RootLayout({
   children,
 }: Readonly<{
